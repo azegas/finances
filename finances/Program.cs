@@ -16,17 +16,24 @@ Console.WriteLine("------------------------\n");
 while (!endApp)
 {
     Console.WriteLine("Choose an option from the following list:");
-    Console.WriteLine("\ta - Print First Expense");
-    Console.WriteLine("\ts - Print All Expenses");
+    Console.WriteLine("\tf - Print First Expense");
+    Console.WriteLine("\ta - Print All Expenses");
+    Console.WriteLine("\td - Delete an Expense");
     Console.Write("Your option? ");
 
     switch (Console.ReadLine())
     {
-        case "a":
+        case "f":
             Printer.PrintFirstExpense(context);
             break;
-        case "s":
+        case "a":
             Printer.PrintAllExpenses(context);
+            break;
+        case "d":
+            Console.Write("Id? ");
+            var userInputtedId = Int32.Parse(Console.ReadLine());
+            var expenseToDelete = context.Expenses.SingleOrDefault(o => o.Id == userInputtedId);
+            Deletor.DeleteById(context, expenseToDelete);
             break;
     }
 
@@ -42,3 +49,8 @@ while (!endApp)
 
     Console.WriteLine("\n"); // Friendly linespacing.
 }
+
+
+// TODO use all oop principles
+// TODO separate bank accounts
+// TODO addition possibility
