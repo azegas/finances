@@ -11,10 +11,8 @@ namespace finances
 
         public DateTime Date { get; set; }
 
-        [MaxLength(20)]
-        public string? Category { get; set; }
+        [MaxLength(20)] public string? Category { get; set; }
 
-        [MaxLength(100)]
-        public string? Description { get; set; }
+        [MaxLength(100)] public string? Description { get; set; }
     }
 }

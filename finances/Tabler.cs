@@ -10,6 +10,5 @@ namespace finances
 
             return table;
         }
-
     }
 }
