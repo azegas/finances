@@ -4,7 +4,7 @@
     {
         public static void PrintAllExpenses(Context context)
         {
-            var expenses = context.Expenses.ToList();
+            var expenses = context.Expenses.OrderByDescending(o => o.Amount).ToList();
 
             var table = Tabler.CreateTable();
 

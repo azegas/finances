@@ -22,6 +22,33 @@ public static class Seeder
                 Description = "Brangus"
             });
 
+        context.Expenses.Add(
+            new Expense
+            {
+                Amount = 20,
+                Category = "Kisielius",
+                Date = DateTime.Now,
+                Description = "Neblogas"
+            });
+
+        context.Expenses.Add(
+            new Expense
+            {
+                Amount = 10,
+                Category = "Guma",
+                Date = DateTime.Now,
+                Description = "Pobrange"
+            });
+
+        context.Expenses.Add(
+            new Expense
+            {
+                Amount = 500,
+                Category = "Saldytuvas",
+                Date = DateTime.Now,
+                Description = "Toks visai nieko"
+            });
+
         context.SaveChanges();
     }
 }
